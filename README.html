@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="author" content="Vimalkumar Velayudhan" />
+  <meta name="dcterms.date" content="2020-07-21" />
+  <title>Skyrocket Documentation</title>
+  <link rel="stylesheet" href="css/mvp.css" />
+<style type="text/css">
+  :root {
+  --color: #2096ba;
+  --color-secondary: #2096ba;
+  --color-accent: #f7f8fa;
+  --color-text: #222426;
+  --color-shadow: #c5d2db;
+  --width-content: 720px;
+  }
+  
+  code, samp {
+    font-size: 1.2em;
+  }
+
+  nav {
+    justify-content: space-evenly;
+  }
+  
+  a:hover {
+    filter: none;
+    color: #df6e21;
+  }
+</style>
+</head>
+<body>
+<header id="title-block-header">
+  <nav id="TOC">
+      <a href="/"><img alt="Logo" src="images/skyrocket.svg" height="70"></a>
+            <ul>
+          <li><a href="#">Navigation</a>
+            <ul>
+            <li><a href="#system-requirements">System Requirements</a></li>
+            <li><a href="#getting-started">Getting Started</a></li>
+            <li><a href="#preview-website">Preview Website</a></li>
+            </ul>
+          </li>
+      </ul>
+        </nav>
+<h1 class="title">Skyrocket Documentation</h1>
+<p class="subtitle">A Static Website Template for Pelican 4</p>
+<p class="author">Vimalkumar Velayudhan</p>
+<p class="date">2020-07-21</p>
+<p><a href="https://skyrocket.vimaltech.com"><i>Website &nearr;</i></a></p>
+</header>
+<main>
+<hr>
+<article>
+<h2 id="system-requirements">System Requirements</h2>
+<h3 id="python-3-and-the-venv-module">Python 3 and the venv module</h3>
+<p>On Ubuntu 20.04, Python 3 is installed by default but you will need to install the <code>venv</code> module. You can install it using <code>apt</code>:</p>
+<pre><code>sudo apt install python3-venv</code></pre>
+<h3 id="git">Git</h3>
+<p>If you plan to publish this website on GitHub or GitLab, you will need an account on these services. In addition, you will need to install Git and add your name and email address to Git configuration.</p>
+<p>On Ubuntu based systems, you can install git using <code>apt</code>:</p>
+<pre><code>sudo apt install git</code></pre>
+<hr />
+<h2 id="getting-started">Getting Started</h2>
+<h3 id="extract-template">1. Extract template</h3>
+<p>You would have extracted the <code>skyrocket-1.0.zip</code> file. Within the extracted folder, you will find a <code>template</code> folder. Copy this folder to a location of your choice and rename it if you wish.</p>
+<h3 id="initialise-website">2. Initialise website</h3>
+<p>Change into this folder and run the <code>initweb.sh</code> script:</p>
+<pre><code>cd template
+bash initweb.sh</code></pre>
+<p>This will create a Python virtual environment and install required packages for the website using <code>pip</code>.</p>
+<h3 id="basic-settings">3. Basic settings</h3>
+<p><sup>NOTE</sup> The following configuration settings are done in <strong>pelicanconf.py</strong>.</p>
+<p>Change <code>AUTHOR</code>, <code>SITENAME</code> and <code>SITESUBTITLE</code> settings as appropriate for your website:</p>
+<pre><code>AUTHOR = &#39;Astro&#39;
+SITENAME = &#39;Skyrocket&#39;
+SITESUBTITLE = &#39;Static Website Template for Pelican&#39;
+   </code></pre>
+<h3 id="update-website-logo">4. Update website logo</h3>
+<p>Copy your website’s logo into <code>content/images</code> folder and then update this setting:</p>
+<pre><code>SITE_LOGO = &#39;images/your_logo.png&#39;</code></pre>
+<h3 id="update-website-author">5. Update website author</h3>
+<p>Update author information for your website.</p>
+<p><sup>NOTE</sup> The dictionary key in <code>AUTHORS</code> must match the value of <code>AUTHOR</code> setting above:</p>
+<pre><code>AUTHORS = {
+&#39;Astro&#39;: {
+    &#39;avatar&#39;: &#39;images/author_profile.svg&#39;,
+    &#39;website&#39;: &#39;https://example.com&#39;,
+    }
+}
+   </code></pre>
+<h3 id="update-social-media-links">6. Update social media links</h3>
+<p>Finally, update links to social media accounts for this website in the <code>SOCIAL</code> setting:</p>
+<pre><code>SOCIAL = ((&#39;Twitter&#39;, &#39;https://twitter.com/&#39;), 
+          (&#39;Facebook&#39;, &#39;https://facebook.com/&#39;),
+          (&#39;Mastodon&#39;, &#39;https://linuxrocks.online/&#39;))</code></pre>
+<p>Save <code>pelicanconf.py</code>.</p>
+<hr />
+<h2 id="preview-website">Preview Website</h2>
+<p>Once you have saved your changes to <code>pelicanconf.py</code>, activate the virtual environment and use the following command to preview the website:</p>
+<pre><code>source venv/bin/activate
+invoke livereload</code></pre>
+<p>Open <a href="http://localhost:8000" class="uri">http://localhost:8000</a> in a browser. If you add some content — a blog post, for example, the website should update automatically.</p>
+<hr>
+</article>
+</main>
+</body>
+</html>
