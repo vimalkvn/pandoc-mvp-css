@@ -3,7 +3,7 @@ title: Skyrocket Documentation
 subtitle: A Static Website Template for Pelican 4
 author: Vimalkumar Velayudhan
 date: 2020-07-21
-website: https://skyrocket.vimaltech.com
+website: https://vimalkvn.com/
 logo: images/skyrocket.svg
 ---
 
