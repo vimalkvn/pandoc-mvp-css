@@ -4,7 +4,7 @@ pages:
   stage: deploy
   script:
     - mkdir .public
-    - cp -r css images README.html .public
+    - cp -r css images sample.html .public
     - mv .public public
   artifacts:
     paths:
