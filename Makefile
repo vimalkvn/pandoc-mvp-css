@@ -1,6 +1,6 @@
 html:
-	pandoc -s README.md --toc --toc-depth=2 -c css/mvp.css \
-	--template template.html -o README.html
+	pandoc -s sample.md --toc --toc-depth=2 -c css/mvp.css \
+	--template template.html -o sample.html
 
 clean:
 	rm -rvf build
