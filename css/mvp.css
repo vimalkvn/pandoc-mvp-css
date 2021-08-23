@@ -1,4 +1,4 @@
-/* MVP.css v1.6.2 - https://github.com/andybrewer/mvp */
+/* MVP.css v1.7.3 - https://github.com/andybrewer/mvp */
 
 :root {
     --border-radius: 5px;
@@ -69,12 +69,22 @@ hr {
     border: none;
     height: 1px;
     margin: 4rem 0;
+    width: 100%;
 }
 
 section {
     display: flex;
     flex-wrap: wrap;
     justify-content: var(--justify-important);
+}
+
+section img,
+article img {
+    max-width: 100%;
+}
+
+section pre {
+    overflow: auto;
 }
 
 section aside {
@@ -88,10 +98,6 @@ section aside {
 
 section aside:hover {
     box-shadow: var(--box-shadow) var(--color-bg-secondary);
-}
-
-section aside img {
-    max-width: 100%;
 }
 
 [hidden] {
@@ -165,6 +171,17 @@ nav ul li ul {
     top: 1.7rem;
     white-space: nowrap;
     width: auto;
+    z-index: 1;
+}
+
+nav ul li ul::before {
+    /* fill gap above to make mousing over them easier */
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -0.5rem;
+    height: 0.5rem;
 }
 
 nav ul li ul li,
@@ -247,7 +264,7 @@ sup {
 
 /* Links */
 a {
-    color: var(--color-secondary);
+    color: var(--color);
     display: inline-block;
     font-weight: bold;
     text-decoration: none;
@@ -296,6 +313,10 @@ a i {
     color: var(--color);
     display: inline-block;
     padding: 1rem 2rem;
+}
+
+article aside a {
+    color: var(--color-secondary);
 }
 
 /* Images */
